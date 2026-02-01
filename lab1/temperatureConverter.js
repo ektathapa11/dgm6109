@@ -1,4 +1,4 @@
-let fahrenheit = 50; // Average temperature in Kathmandu in January
+let fahrenheit = 50; // Average temperature in Kathmandu in January (recent year)
 
 let celsius = (fahrenheit - 32) * 5 / 9;
 let kelvin = celsius + 273.15;
