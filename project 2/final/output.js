@@ -11,7 +11,7 @@
 function output(message, success) {
     const display = document.getElementById("output");
     
-    // Default success to false if it isn't provided [cite: 10]
+    // Default success to false if it isn't provided
     if (success === undefined) {
         success = false;
     }

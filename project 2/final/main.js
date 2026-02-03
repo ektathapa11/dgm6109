@@ -72,7 +72,7 @@ function evaluateAnswers(combo, quantity, zip) {
     let basePrice = 0;
     let isDiscounted = false;
     
-    // Set the price based on what they picked [cite: 62, 63, 64]
+    // Set the price based on what they picked 
     if (combo === "Pizza & Salad") {
         basePrice = 12.00;
     } else if (combo === "Taco Platter") {
@@ -96,14 +96,14 @@ function evaluateAnswers(combo, quantity, zip) {
         isDiscounted = true;
     }
 
-    // Turn the number into a currency string with two decimals [cite: 67, 70]
+    // Turn the number into a currency string with two decimals
     const formattedPrice = "$" + totalPrice.toFixed(2);
 
-    // Create the final success message [cite: 66, 67]
+    // Create the final success message
     let resultMsg = "Your order of " + quantity + " " + combo + " will be available at our store location in ZIP code " + zip + ".<br>";
     resultMsg += "You will be charged " + formattedPrice + " when you pick it up.";
 
-    // Add the extra discount text if they earned it [cite: 68]
+    // Add the extra discount text if they earned it 
     if (isDiscounted) {
         resultMsg += " This includes a 25% discount for ordering " + quantity + " of this item.";
     }
@@ -111,7 +111,7 @@ function evaluateAnswers(combo, quantity, zip) {
     // Show the success message in green
     output(resultMsg, true);
     
-    // Hide the submit button and show reset so they can start over [cite: 52]
+    // Hide the submit button and show reset so they can start over 
     document.getElementById("submit").setAttribute("hidden", "hidden");
     document.getElementById("reset").removeAttribute("hidden");
     
