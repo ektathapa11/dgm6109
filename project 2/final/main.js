@@ -20,21 +20,21 @@ function processForm() {
     // This array will hold any error messages we find
     const errors = [];
 
-    // Make sure they actually picked a food item
+    // to make sure they actually picked a food item
     if (comboChoice === "") {
         errors.push("Please select a combo.");
     }
 
-    // Check if quantity is a valid whole number bigger than zero [cite: 58]
+    // Checking if quantity is a valid whole number bigger than zero
     if (quantityRaw === "" || isNaN(quantityNum) || quantityNum <= 0 || quantityNum % 1 !== 0) {
         errors.push("Quantity must be a whole number greater than 0.");
     }
 
-    // Check that the ZIP is exactly 5 characters long [cite: 58]
+    // Checking  that the ZIP is exactly 5 characters long
     if (zipCode.length !== 5) {
         errors.push("ZIP code must be exactly 5 digits.");
     } else {
-        // Loop through each character to make sure they are all numbers [cite: 8, 11]
+        // Loop through each character to make sure they are all numbers
         for (let i = 0; i < zipCode.length; i++) {
             if (zipCode[i] < "0" || zipCode[i] > "9") {
                 errors.push("ZIP code must contain only numbers.");
