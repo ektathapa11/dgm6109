@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 2: Food Ordering System - Final</title>
+</head>
+<body>
+    <h2> Simple Food Ordering System (Project 2 Final)</h2>
+    <p>Fill out the form below to place your order.</p>
+    <hr>
+    <form id="orderForm">
+        <p>
+            <label for="combo">Which combo are you ordering?</label><br>
+            <select id="combo">
+                <option value="">--Select--</option>
+                <option value="Pizza & Salad">Pizza & Salad ($12.00)</option>
+                <option value="Hamburger & Fries">Hamburger & Fries ($8.00)</option>
+                <option value="Taco Platter">Taco Platter ($10.00)</option>
+            </select>
+        </p>
+        <p>
+            <label for="quantity">How many are you ordering?</label><br>
+            <input id="quantity" type="text" placeholder="Whole number > 0">
+        </p>
+        <p>
+            <label for="zipcode">ZIP Code:</label><br>
+            <input id="zipcode" type="text" maxlength="5" placeholder="5-digit ZIP">
+        </p>
+        <button id="submit" type="button">Submit Order</button>
+        <button id="reset" type="button" hidden>Start Over</button>
+        <div id="output"></div>
+    </form>
+    <hr>
+    <a href="flowchart.pdf" target="_blank">VIEW MY FLOWCHART</a>
+    <script src="output.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
