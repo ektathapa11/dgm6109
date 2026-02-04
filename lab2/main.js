@@ -8,27 +8,26 @@ let drawing = d3.select("#canvas")
     .attr("width", drawWidth)
     .attr("height", drawHeight);
 
-/* Background and Border */
+// Background and Border
 let border = drawing.append("rect")
     .attr("width", drawWidth)
     .attr("height", drawHeight)
     .attr("fill", "#ADD8E6") 
     .attr("stroke", "red");
 
-/* CONFIGURATION VARIABLES
-   Change these to move the entire dog.
-*/
+// CONFIGURATION VARIABLES
+ //  Change these to move the entire dog
+
 let dogX = 200; 
 let dogY = 200;
 
 
-   /* What I tried: I tried to make the dog move using dogX and dogY. 
-   What went wrong: The dog "fell apart" because some points were hardcoded while others used variables, causing the shapes to stretch.
-   How I fixed it: I recalculated every point in the closedPolygon functions to ensure they all use (dogX + offset) and (dogY + offset).
-   Debugging methods: I used the Chrome Inspector to see which points were staying still while others moved.
-*/
+// What I tried: I tried to make the dog move using dogX and dogY
+// What went wrong: The dog "fell apart" because some points were hardcoded while others used variables, causing the shapes to stretch
+// How I fixed it: I recalculated every point in the closedPolygon functions to ensure they all use (dogX + offset) and (dogY + offset)
+// Debugging methods: I used the Chrome Inspector to see which points were staying still while others moved. I also took some help from the AI
 
-/* DOG BODY SECTIONS */
+// DOG BODY SECTIONS
 let dogTail = drawing.append("polygon")
     .attr("points", closedPolygon(dogX - 50, dogY + 125, dogX - 50, dogY + 200, dogX, dogY + 200))
     .attr("fill", "#999999")
@@ -44,7 +43,7 @@ let bodyFront = drawing.append("polygon")
     .attr("fill", "#CCCCCC")
     .attr("stroke", "black");
 
-/* DOG HEAD AND EARS */
+// DOG HEAD AND EARS
 let headMain = drawing.append("polygon")
     .attr("points", closedPolygon(dogX - 25, dogY - 25, dogX + 100, dogY + 100, dogX + 75, dogY - 50))
     .attr("fill", "#CCCCCC")
@@ -60,7 +59,7 @@ let rightEar = drawing.append("polygon")
     .attr("fill", "#CCCCCC")
     .attr("stroke", "black");
 
-/* FACE DETAILS */
+// FACE DETAILS
 let leftEye = drawing.append("circle")
     .attr("cx", dogX + 25)
     .attr("cy", dogY - 15)
@@ -80,7 +79,7 @@ let noseTip = drawing.append("circle")
     .attr("fill", "black")
     .attr("stroke", "black");
 
-/* PAW LINES */
+// PAW LINES
 let pawLine1 = drawing.append("line")
     .attr("x1", dogX + 65)
     .attr("y1", dogY + 190)
@@ -95,4 +94,4 @@ let pawLine2 = drawing.append("line")
     .attr("y2", dogY + 200)
     .attr("stroke", "black");
 
-    // I also took some help from the AI //
+    
