@@ -1,46 +1,26 @@
 "use strict"
 
-document.getElementById("action").addEventListener("click", processForm);
+let drawHeight = 500;
+let drawWidth = 500;
 
-let xdog, ydog, choice;
-
-// This function reads user input and redraws the dog
-function processForm() {
-    // Get x and y position values from the input fields
-    xdog = Number(document.getElementById("xInput").value);
-    ydog = Number(document.getElementById("yInput").value);
-
-    // Get selected dog expression (normal or winking)
-    choice = document.getElementById("dogOption").value; // Reads the selection
-    drawing.selectAll('svg>*').remove(); // This line selects everything that has been drawn in the SVG and deletes it all
-    drawImage();
-}
-
-let drawing = d3.select("#canvas") //set up the drawing canvas
+//  Variable that enables to talk SVG drawing canvas
+let drawing = d3.select("#canvas")
     .append("svg")
-    .attr("width", 500)
-    .attr("height", 500);
+    .attr("width", drawWidth)
+    .attr("height", drawHeight);
 
-let border = drawing.append("rect") // Draw initial red border around canvas
-    .attr("width", 500)
-    .attr("height", 500)
-    .attr("fill", "none")
+// This draws a border around the canvas so the edges can be seen 
+let border = drawing.append("rect")
+    .attr("width", drawWidth)
+    .attr("height", drawHeight)
+    .attr("fill", "lightblue")
     .attr("stroke", "red");
 
-// ORIGIN POINT: (xdog, ydog) represents the bottom-left base of the dog's body.
-// All other shapes (tail, legs, head, ears) are drawn relative to this point.
+  // These variables allow the entire dog to move together
+ //  All coordinates below are calculated relative to these
 
-function drawImage() {
-
-let dogX = xdog; // Base reference point for the dog
-let dogY = ydog;
-
- // Redraw the red border
-    drawing.append("rect")
-        .attr("width", 500)
-        .attr("height", 500)
-        .attr("fill", "none")
-        .attr("stroke", "red");
+let dogX = 100; 
+let dogY = 75;
 
 // Using polygons for the triangular tail and back leg
 
@@ -95,30 +75,11 @@ let eyeLeft = drawing.append("circle")
     .attr("r", 5)
     .attr("fill", "black");
 
-    // Making the eye wink
-if (choice === "normal") {
-    let eyeRight = drawing.append("circle")
-        .attr("cx", dogX + 105)
-        .attr("cy", dogY + 75)
-        .attr("r", 5)
-        .attr("fill", "black");
-} else if (choice === "winking") {
-    let eyeRight = drawing.append("line")
-        .attr("x1", dogX + 100)
-        .attr("y1", dogY + 75)
-        .attr("x2", dogX + 110)
-        .attr("y2", dogY + 75)
-        .attr("stroke", "black")
-        .attr("stroke-width", 2);
-}
-
-/*DESCRIPTION:
-When the "winking" option is selected, the dog's right eye is drawn
-as a horizontal line instead of a circle. This creates the
-appearance of the dog winking. When "normal" is selected,
-both eyes are drawn as circles.
-*/
-
+let eyeRight = drawing.append("circle")
+    .attr("cx", dogX + 105)
+    .attr("cy", dogY + 75)
+    .attr("r", 5)
+    .attr("fill", "black");
 
 let noseTip = drawing.append("circle")
     .attr("cx", dogX + 150)
@@ -127,8 +88,8 @@ let noseTip = drawing.append("circle")
     .attr("fill", "black")
     .attr("stroke", "black");
 
-// LEG DETAIL LINES (Fingers/Claws)
-// Placed at the bottom of the front leg polygons
+    // LEG DETAIL LINES (Fingers/Claws)
+  // Placed at the bottom of the front leg polygons
 
 // First leg lines
 let legLine1 = drawing.append("line")
@@ -162,5 +123,4 @@ let legLine4 = drawing.append("line")
     .attr("x2", dogX + 163)
     .attr("y2", dogY + 300)
     .attr("stroke", "black")
-    .attr("stroke-width", 1); }
-
+    .attr("stroke-width", 1);

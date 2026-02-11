@@ -6,7 +6,7 @@ function closedPolygon(...args) {
         return "";
     }
     let polyString = "";
-
+    // grab each pair of points and add to string of points
     for (let i = 0; i < args.length; i++) {
         polyString += args[i];
         polyString += " ";
@@ -14,5 +14,5 @@ function closedPolygon(...args) {
 
     polyString += args[0] + " " + args[1];
 
-    return polyString; 
+    return polyString; // send back our completed String
 }

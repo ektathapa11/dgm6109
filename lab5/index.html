@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Ekta Thapa Lab #5 - Fall 2023</title>
+    <script src="libraries/d3.min.js"></script>
+    <script src="libraries/polygon.js"></script>
+
+    <!-- Your classmate scripts -->
+    <script src="elements/dog.js"></script>
+    <script src="elements/butterfly.js"></script>
+    <script src="elements/duck.js"></script>
+    <script src="elements/bear.js"></script>
+    <script src="elements/fish.js"></script>
+</head>
+
+<body>
+    <p>Select the first element for your drawing:
+        <select id="choice1">
+            <option value="dog">Dog</option>
+            <option value="butterfly">Butterfly</option>
+            <option value="duck">Duck</option>
+            <option value="bear">Bear</option>
+            <option value="fish">Fish</option>
+        </select>
+    </p>
+    <p>Position your first element: x:<input type="number" id="x1" value="100">, y:<input type="number" id="y1" value="300"></p>
+
+    <p>Select the second element for your drawing:
+        <select id="choice2">
+            <option value="dog">Dog</option>
+            <option value="butterfly">Butterfly</option>
+            <option value="duck">Duck</option>
+            <option value="bear">Bear</option>
+            <option value="fish">Fish</option>
+        </select>
+    </p>
+    <p>Position your second element: x:<input type="number" id="x2" value="300">, y:<input type="number" id="y2" value="300"></p>
+
+    <p>Show origin points: 
+        <select id="origins">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+    </p>
+
+    <button id="action">Draw!</button>
+    <div id="canvas"></div>
+
+    <script src="main.js"></script>
+</body>
+</html>
