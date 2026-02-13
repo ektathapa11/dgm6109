@@ -1,0 +1,77 @@
+/*
+Code Snippet 02 - Styling HTML with CSS
+
+Resources Used:
+- W3Schools CSS Tutorial
+- MDN Web Docs (hover and focus states)
+- W3C CSS Validator
+*/
+
+/* Change default font */
+body {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    margin: 1.875rem auto;
+    background-color: #f4f4f4;
+    max-width: 50rem;
+    
+}
+
+
+/* Add spacing between elements */
+h1, h2, h3, h4 {
+    margin-bottom: 0.9375rem;
+    text-align: left;
+    margin-left: 0;
+}
+
+p {
+     margin: 1.25rem auto;
+    max-width: 37.5rem;
+    text-align: center;
+
+    /* Shortened width but responsive */
+    max-width: 37.5rem;
+    width: 90%;
+    line-height: 1.6;
+
+    
+}
+
+/* Style regular links */
+a {
+    color: darkblue;
+    text-decoration: none;
+}
+
+/* Hover state for in-text link */
+a:hover {
+    color: crimson;
+    text-decoration: underline;
+}
+
+/* Focus state for accessibility */
+a:focus {
+    outline: 0.1875rem solid purple;
+    color: purple;
+}
+
+/* Style images */
+img {
+    max-width: 70%;
+    height: auto;
+    transition: transform 0.3s ease;
+    margin-top: 1.25rem;
+    display: block;
+    margin: 1.5rem auto;
+}
+
+/* Hover effect for image inside link */
+a:hover img {
+    transform: scale(1.05);
+}
+
+/* Focus effect for image */
+a:focus img {
+    transform: scale(1.05);
+    outline: 0.25rem solid orange;
+}
