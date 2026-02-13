@@ -9,7 +9,7 @@ Resources Used:
 
 /* Change default font */
 body {
-    font-family: 'Trebuchet MS', Arial, sans-serif;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     margin: 1.875rem auto;
     background-color: #f4f4f4;
     max-width: 50rem;
