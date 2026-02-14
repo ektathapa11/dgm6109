@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab #3</title> <!-- Title of the page -->
+</head>
+
+<body>
+    <h1>Ekta Thapa Lab #3</h1> <!-- Main heading -->
+
+    <p>This program converts a Fahrenheit temperature into Celsius or Kelvin.</p> <!-- Program description -->
+
+    <p>
+        Enter temperature in Fahrenheit:
+        <input type="text" id="inputF"> <!-- User types Fahrenheit here -->
+    </p>
+
+    <p>
+        Choose a conversion:
+        <select id="conversionChoice"> <!-- Dropdown to choose conversion -->
+            <option value="c">Celsius</option>
+            <option value="k">Kelvin</option>
+        </select>
+    </p>
+
+    <button id="submit">Convert</button> <!-- Button to run conversion -->
+
+    <div id="output"></div> <!-- Where result will show -->
+
+    <!-- Link JavaScript files -->
+    <script src="output.js"></script> <!-- Handles output display -->
+    <script src="temperatureConverter.js"></script> <!-- Main program -->
+</body>
+</html>
