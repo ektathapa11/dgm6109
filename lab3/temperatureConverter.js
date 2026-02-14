@@ -41,7 +41,7 @@ document.getElementById("submit")
     }
 
     // ======================
-    // Conditional logic version 2: two separate ifs (commented out)
+    // Conditional logic version 2: two separate ifs
     // ======================
     /*
     if (conversionType === "c") {
