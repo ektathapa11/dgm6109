@@ -1,0 +1,180 @@
+/* Resources Used:
+1. MDN Web Docs - Media Queries
+https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries
+
+2. CSS Tricks - Flexbox Guide
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+3. W3Schools - Flexbox & Responsive Design
+Used for understanding justify-content and layout adjustments.
+*/
+
+
+/* MOBILE  (320px) */
+
+body {
+    font-family:'Trebuchet MS', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    background-color: #f4f7f6;
+}
+
+section {
+    background: white;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 0.7rem;
+    box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.1);
+}
+
+/* Typography */
+h1 { 
+    color: #4B0082;
+    font-size: 2rem;   /* Smaller for mobile */
+    text-align: center;
+}
+h2 { 
+    color: #2980b9;
+    font-size: 1.5rem;
+}
+h3 { font-size: 1.3rem; }
+h4 { font-size: 1rem; }
+
+/* Links */
+a { 
+    color: #3498db;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+    color: #e74c3c;
+}
+
+/* Navigation - stacked on mobile */
+nav {
+    background-color: #333;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;  /* Mobile stacked */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+ul li {
+    padding: 1rem;
+}
+
+ul li a {
+    color: #eee;
+    font-size: 1.2rem;
+}
+
+/* Form */
+.form-group {
+    margin: 1rem 0;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+}
+
+/* Responsive image */
+img {
+    width: 100%;
+    height: auto;
+}
+
+/* Palette */
+.palette {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.color-box {
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-radius: 0.25rem;
+}
+
+.primary { background-color: #3498db; }
+.secondary { background-color: #2ecc71; }
+.accent { background-color: #e74c3c; }
+
+/* Buttons */
+.btn {
+    padding: 0.7rem 1.2rem;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background: #3498db;
+    color: white;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid #3498db;
+    color: #3498db;
+}
+
+
+/* DESKTOP - 1024px */
+
+@media (min-width: 1024px) {
+
+    ul {
+        flex-direction: row; /* Horizontal nav */
+        justify-content: space-evenly;
+    }
+
+    section {
+        max-width: 48%;
+        margin: 1rem auto;
+    }
+
+    .palette {
+        flex-direction: row;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+}
+
+
+/* LARGE SCREEN - 1920px */
+
+@media (min-width: 1920px) {
+
+    body {
+        max-width: 1600px;
+        margin: auto;
+    }
+
+    section {
+        max-width: 30%;
+        display: inline-block;  /* Creates multi-column look */
+        vertical-align: top;
+        margin: 1rem;
+    }
+
+    h1 {
+        font-size: 4rem;
+    }
+}
