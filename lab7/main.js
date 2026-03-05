@@ -1,140 +1,100 @@
-"use strict"
+"use strict";
 
-
-// CONFIGURATION VARIABLES
-// Controls SVG size and margins
-
+/**** CONFIGURATION VARIABLES ****/
 let svgWidth = 600;
 let svgHeight = 400;
-let margin = 25;
+let margin = 60;
 
+/**** DATASET (minimum 6 observations) ****/
+let dataset = [
+    { switches: 110, overload: 3.5 },
+    { switches: 142, overload: 4.5 },
+    { switches: 156, overload: 4.8 },
+    { switches: 60, overload: 2.1 },
+    { switches: 85, overload: 2.8 },
+    { switches: 125, overload: 3.9 }
+];
 
-// RESIZE CONTAINER TO MATCH SVG WIDTH
-
-d3.select("#container")
-    .style("width", svgWidth + "px");
-
-
-// CREATE SVG CANVAS
-
+/**** CREATE SVG CANVAS ****/
 let svg = d3.select("#canvas")
     .append("svg")
     .attr("width", svgWidth)
-    .attr("height", svgHeight);
+    .attr("height", svgHeight)
+    .style("display", "block")
+    .style("margin", "auto");
 
-
-// DRAW OUTER BORDER
-
-svg.append("rect")
-    .attr("fill", "none")
-    .attr("stroke", "black")
+    svg.append("rect")
+    .attr("x", 0)
+    .attr("y", 0)
     .attr("width", svgWidth)
-    .attr("height", svgHeight);
-
-
-// DRAW MARGIN BORDER
-
-svg.append("rect")
+    .attr("height", svgHeight)
     .attr("fill", "none")
     .attr("stroke", "black")
+    .attr("stroke-width", 2);
+
+/**** CREATE SCALES ****/
+let xScale = d3.scaleLinear()
+    .domain([0, d3.max(dataset, function(d){ return d.switches; })])
+    .range([margin, svgWidth - margin]);
+
+let yScale = d3.scaleLinear()
+    .domain([0, d3.max(dataset, function(d){ return d.overload; })])
+    .range([svgHeight - margin, margin]);
+
+/**** DRAW MARGIN BORDER ****/
+svg.append("rect")
+    .attr("fill", "none")
+    .attr("stroke", "gray")
     .attr("stroke-dasharray", "5")
     .attr("x", margin)
     .attr("y", margin)
     .attr("width", svgWidth - margin * 2)
     .attr("height", svgHeight - margin * 2);
 
-
- // GRAPH TITLE
-
-svg.append("text")
-    .attr("x", svgWidth / 2)
-    .attr("y", margin / 1.5)
-    .attr("text-anchor", "middle")
-    .style("font-weight", "bold")
-    .style("font-size", "14px")
-    .text("Relationship Between App Switching and Mental Overload");
-
- // DATASET
- // X: App Switches (per day)
- // Y: Daily Average Mental Overload (0-5 scale)
-
-let dataset = [
-    { switchesPerDay: 110, dailyAvg: 3.5 },
-    { switchesPerDay: 142, dailyAvg: 4.5 },
-    { switchesPerDay: 156, dailyAvg: 4.5 },
-    { switchesPerDay: 128, dailyAvg: 4 },
-    { switchesPerDay: 135, dailyAvg: 4 },
-    { switchesPerDay: 85, dailyAvg: 2.5 },
-    { switchesPerDay: 60, dailyAvg: 1.5 },
-    { switchesPerDay: 75, dailyAvg: 2.5 },
-    { switchesPerDay: 95, dailyAvg: 3.5 },
-    { switchesPerDay: 148, dailyAvg: 4.5 }
-];
-
-// CREATE SCALES
-// Maps data values to pixel positions
-
-let xScale = d3.scaleLinear()
-    .domain([0, d3.max(dataset, d => d.switchesPerDay)]) // 0 to max switches
-    .range([margin, svgWidth - margin]);
-
-let yScale = d3.scaleLinear()
-    .domain([0, d3.max(dataset, d => d.dailyAvg)]) // 0 to max overload
-    .range([svgHeight - margin, margin]);
-
-// DRAW DATA POINTS
-
+/**** DRAW DATA POINTS ****/
 svg.selectAll("circle")
     .data(dataset)
     .join("circle")
-    .attr("r", 8)
-    .attr("cx", d => xScale(d.switchesPerDay))
-    .attr("cy", d => yScale(d.dailyAvg))
+    .attr("r", 7)
+    .attr("cx", function(value) {
+        return xScale(value.switches);
+    })
+    .attr("cy", function(value) {
+        return yScale(value.overload);
+    })
     .attr("fill", "black")
-    .style("opacity", 0.8); // optional, reduces overlap
+    .style("opacity", 0.7);
 
-//  X AXIS LABEL
+/**** X AXIS LABELS (for loop) ****/
+for (let i = 0; i <= 160; i += 40) {
+    svg.append("text")
+        .attr("x", xScale(i))
+        .attr("y", svgHeight - (margin / 2))
+        .attr("text-anchor", "middle")
+        .text(String(i));
+}
 
+/**** Y AXIS LABELS (for loop) ****/
+for (let i = 0; i <= 5; i += 1) {
+    svg.append("text")
+        .attr("x", margin * 0.8)
+        .attr("y", yScale(i))
+        .attr("text-anchor", "end")
+        .attr("alignment-baseline", "middle")
+        .text(String(i));
+}
+
+/**** AXIS TITLES ****/
 svg.append("text")
     .attr("x", svgWidth / 2)
-    .attr("y", svgHeight - margin / 3)
+    .attr("y", svgHeight - 10)
     .attr("text-anchor", "middle")
-    .style("font-size", "12px")
-    .text("App Switches (per day)");
-
- // Y AXIS LABEL
+    .text("App Switches per Day");
 
 svg.append("text")
     .attr("transform", "rotate(-90)")
     .attr("x", -svgHeight / 2)
     .attr("y", 20)
     .attr("text-anchor", "middle")
-    .style("font-size", "12px")
-    .text("Daily Average Mental Overload (0–5 scale)");
+    .text("Mental Overload Level (0-5)");
 
-
- // LOW AND HIGH VALUE LABELS
-
-svg.append("text") // X-axis low
-    .attr("x", margin)
-    .attr("y", svgHeight - margin / 2)
-    .attr("text-anchor", "middle")
-    .text("0");
-
-svg.append("text") // X-axis high
-    .attr("x", svgWidth - margin)
-    .attr("y", svgHeight - margin / 2)
-    .attr("text-anchor", "middle")
-    .text(d3.max(dataset, d => d.switchesPerDay));
-
-svg.append("text") // Y-axis low
-    .attr("x", margin / 2)
-    .attr("y", svgHeight - margin)
-    .attr("text-anchor", "middle")
-    .text("0");
-
-svg.append("text") // Y-axis high
-    .attr("x", margin / 2)
-    .attr("y", margin)
-    .attr("text-anchor", "middle")
-    .text(d3.max(dataset, d => d.dailyAvg));
