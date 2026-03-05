@@ -20,6 +20,9 @@ let dataset = [
 ];
 
 /**** SORT DATA (Large circles drawn first)  ****/
+// Sorting the dataset by 'time' (daily phone use) in descending order ensures that larger bubbles are drawn first. Elements drawn
+// later appear on top of earlier elements. By drawing larger circles first, smaller circles are layered on top, preventing them from
+// being obscured and making the visualization clearer and more readable
 dataset.sort(function(a, b) {
     return b.time - a.time;
 });
@@ -41,22 +44,43 @@ let yScale = d3.scaleLinear()
     .domain([0, 5])
     .range([svgHeight - bottomMargin, topMargin]);
 
-/* Circle size scale - Square Root scale is taught for bubble area  */
+/* Circle size scale*/
 let radiusScale = d3.scaleSqrt()
     .domain([120, 330])
     .range([6, 35]);
 
-/**** DRAW DATA BUBBLES - Using standard function syntax ****/
+/**** GRAPH TITLE ****/
+svg.append("text")
+    .attr("x", svgWidth/2)
+    .attr("y", 40)
+    .attr("text-anchor", "middle")
+    .style("font-size", "18px")
+    .style("font-weight", "bold")
+    .text("Smartphone Use vs Mental Overload");
+
+/**** DRAW DATA BUBBLES ****/
 svg.selectAll("circle")
     .data(dataset)
     .join("circle")
-    .attr("cx", function(d) { return xScale(d.switches); })
-    .attr("cy", function(d) { return yScale(d.overload); })
-    .attr("r", function(d) { return radiusScale(d.time); })
+    .attr("cx", function(d) {
+        return xScale(d.switches); 
+    })
+    .attr("cy", function(d) { 
+        return yScale(d.overload);
+     })
+    .attr("r", function(d) { 
+        return radiusScale(d.time); 
+    })
     .attr("fill", function(d) {
-        if (d.stress < 50) { return "#66c2ff"; }
-        else if (d.stress < 75) { return "#ffcc66"; }
-        else { return "#ff6666"; }
+        if (d.stress < 50) { 
+            return "#66c2ff"; 
+        }
+        else if (d.stress < 75) { 
+            return "#ffcc66"; 
+        }
+        else { 
+            return "#ff6666"; 
+        }
     })
     .style("opacity", 0.75)
     .attr("stroke", "white"); 
@@ -136,6 +160,8 @@ svg.append("text")
     .text("Daily Phone Time");
 
 /**** SIZE KEY - Using For Loop ****/
+// Each circle in the size key is drawn to reflect the actual radius scale used in the plot.
+// This helps viewers understand how bubble size corresponds to daily phone time.
 
 for (let i = 0; i < sizes.length; i++) {
     svg.append("circle")
@@ -153,6 +179,8 @@ for (let i = 0; i < sizes.length; i++) {
 }
 
 /**** COLOR KEY BOX ****/
+// Each rectangle in the color key shows the stress level associated with bubble color.
+// This makes it clear how categorical data (stress levels) is visually represented in the chart.
 
 svg.append("rect")
     .attr("x", keyX - 30)
@@ -193,3 +221,4 @@ for (let i = 0; i < colorData.length; i++) {
         .style("font-size", "11px")
         .text(`${colorData[i].label}`);
 }
+
