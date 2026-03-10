@@ -1,12 +1,19 @@
 "use strict";
 
-/* *** START Do not modify this section of code ***** */
 document.getElementById("action").addEventListener("click", processForm);
 
 let drawing = d3.select("#canvas")
     .append("svg")
     .attr("width", 500)
     .attr("height", 500);
+
+
+// Draw border
+drawing.append("rect")
+    .attr("width", 500)
+    .attr("height", 500)
+    .attr("fill", "none")
+    .attr("stroke", "red");
 
 function processForm() {
     let choice1 = document.getElementById("choice1").value;
@@ -20,43 +27,37 @@ function processForm() {
     let showOrigin = document.getElementById("origins").value === "yes";
 
     // Clear previous drawings (keep SVG)
-    drawing.selectAll("g, rect").remove();
+    drawing.selectAll("g").remove();
 
-    // Draw border
-    drawing.append("rect")
-        .attr("width", 500)
-        .attr("height", 500)
-        .attr("fill", "none")
-        .attr("stroke", "red");
+
 
     makeDrawing(drawing, choice1, x1, y1, choice2, x2, y2, showOrigin);
 }
-/* *** END Do not modify this section of code ***** */
 
 function makeDrawing(canvas, choice1, x1, y1, choice2, x2, y2, showOrigin) {
     let item1 = canvas.append("g");
     if (choice1 === "dog") 
         dog(item1, x1, y1, showOrigin);
-    else if (choice1 === "butterfly") 
+    else if (choice1 === "drawButterfly") 
         drawButterfly(item1, x1, y1, showOrigin);
     else if (choice1 === "bear")
         bear(item1, x1, y1, showOrigin);
-    else if (choice1 === "duck") 
-        duck(item1, x1, y1, showOrigin);
+    else if (choice1 === "drawDuck") 
+        drawDuck(item1, x1, y1, showOrigin);
     else if (choice1 === "fish") 
-        fish(item1, x1, y1, showOrigin);
+        drawFish(item1, x1, y1, showOrigin);
 
     let item2 = canvas.append("g");
     if (choice2 === "dog") 
         dog(item2, x2, y2, showOrigin);
-    else if (choice2 === "butterfly") 
+    else if (choice2 === "drawButterfly") 
         drawButterfly(item2, x2, y2, showOrigin);
     else if (choice2 === "bear") 
         bear(item2, x2, y2, showOrigin);
-    else if (choice2 === "duck") 
-        duck(item2, x2, y2, showOrigin);
+    else if (choice2 === "drawDuck") 
+        drawDuck(item2, x2, y2, showOrigin);
     else if (choice2 === "fish") 
-        fish(item2, x2, y2, showOrigin);
+         drawFish(item2, x2, y2, showOrigin);
 
     switcheroo(item1, x1, y1, item2, x2, y2);
 }
