@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Visualization Sketch Proposals</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    margin:40px;
+    background-color:#f5f5f5;
+    line-height:1.6;
+}
+
+h1{
+    color:#222;
+}
+
+h2{
+    color:#333;
+}
+
+.section{
+    background:white;
+    padding:20px;
+    margin-bottom:25px;
+    border-left:5px solid #4a6fa5;
+}
+
+a{
+    color:#1a4fb5;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Visualization Sketch Proposals</h1>
+
+<p>
+This project explores the relationship between smartphone usage and mental overload.
+The recorded data includes total screen time, number of app switches, number of
+notifications received, and mental overload levels measured at two different times
+of the day (2pm and 10pm). The goal of the visualizations is to explore how different
+aspects of smartphone usage may relate to increases in mental overload throughout
+the day.
+</p>
+
+
+<div class="section">
+
+<h2>Sketch 1 - Screen Time vs Mental Overload Scatterplot</h2>
+
+<p><strong>Hypothesis:</strong><br>
+As total screen time increases, daily average mental overload increases.
+A higher number of notifications may further contribute to higher overload levels.
+</p>
+
+<p><strong>Data Elements:</strong></p>
+<ul>
+<li>Total Screen Time (minutes, approximately 150-550 minutes)</li>
+<li>Daily Average Mental Overload (scale 1-5)</li>
+<li>App Switches (approximately 60-156 switches per day)</li>
+</ul>
+
+<p><strong>Representation:</strong></p>
+<ul>
+<li>X-axis represents total screen time in minutes.</li>
+<li>Y-axis represents daily average mental overload on a scale from 1 to 5.</li>
+<li>Each plotted point represents a single day in the dataset.</li>
+<li>Point color represents the number of app switches (lighter color = fewer switches, darker color = more switches).</li>
+</ul>
+
+<p>
+<a href="sketch1.pdf">View Sketch 1</a>
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h2>Sketch 2 - Screen Time vs Notifications Trend</h2>
+
+<p><strong>Question:</strong><br>
+Do higher screen time levels correspond to higher numbers of notifications?
+</p>
+
+<p><strong>Data Elements:</strong></p>
+<ul>
+<li>Total Screen Time (minutes, approximately 150-550 minutes)</li>
+<li>Notifications received per day (approximately 45-132 notifications)</li>
+<li>App Switches (approximately 60-156 switches per day)</li>
+<li>Daily Average Mental Overload (scale 1-5)</li>
+</ul>
+
+<p><strong>Representation:</strong></p>
+<ul>
+<li>X-axis represents total screen time in minutes.</li>
+<li>Y-axis represents number of notifications received per day.</li>
+<li>Circles represent individual days in the dataset.</li>
+<li>Circle size represents the number of app switches.</li>
+<li>A connecting line shows the trend relationship between screen time and notifications.</li>
+</ul>
+
+<p>
+<a href="sketch2.pdf">View Sketch 2</a>
+</p>
+
+</div>
+
+
+<div class="section">
+
+<h2>Sketch 3 - Mental Overload Heatmap Grid</h2>
+
+<p><strong>Question:</strong><br>
+Does mental overload increase later in the day when smartphone activity is high?
+</p>
+
+<p><strong>Data Elements:</strong></p>
+<ul>
+<li>Date</li>
+<li>Mental Overload at 2pm (scale 1-5)</li>
+<li>Mental Overload at 10pm (scale 1-5)</li>
+<li>Notifications received per day (approximately 45-132 notifications)</li>
+</ul>
+
+<p><strong>Representation:</strong></p>
+<ul>
+<li>Rows represent each date in the dataset.</li>
+<li>Columns represent the time of day (2pm and 10pm).</li>
+<li>Cell color intensity represents the level of mental overload.</li>
+<li>Light shading represents low overload, medium shading represents moderate overload, and dark shading represents high overload.</li>
+<li>Cell border thickness represents the number of notifications received that day.</li>
+</ul>
+
+<p>
+<a href="sketch3.pdf">View Sketch 3</a>
+</p>
+
+</div>
+
+
+</body>
+<p>
+<b>Reference:</b> The visualization ideas were inspired by examples from the 
+<a href="https://datavizcatalogue.com">Data Visualization Catalogue</a> and the 
+<a href="http://www.dear-data.com/theproject">Dear Data project</a>. These resources helped me understand 
+different ways to represent multi-dimensional data visually. The scatterplot concept influenced the first 
+sketch for exploring relationships between screen time and mental overload, while the heatmap-style grid 
+in the third sketch was inspired by visualization techniques shown in these resources.
+</p>
+</html>
