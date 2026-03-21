@@ -1,0 +1,28 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+#chart {
+    display: flex;
+    justify-content: center; /* centers SVG */
+}
+
+h1, h2 {
+    text-align: left;
+    margin-left: 10px;
+}
+
+p {
+   
+    line-height: 1.6;
+    margin-left: 10px;
+    margin-right: 50px;
+}
+
+ul {
+    line-height: 1.6;
+    margin-left: 10px;
+    margin-right: 50px;
+}
+

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>App Switching vs Mental Overload</title>
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Load D3 FIRST -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    
+    <!-- SVG Container -->
+    <div id="chart"></div>
+
+    <!-- Load your JS LAST -->
+    <script src="main.js"></script>
+</head>
+
+<body>
+
+    <!-- Page Title -->
+   <h1>Mental Overload HeatMap</h1>
+
+<p>
+    <strong>Hypothesis:</strong> As app switching frequency increases, perceived mental overload increases throughout the day.</p>
+<h2>Work Explanation</h2>
+<p>
+This visualization explores the relationship between app switching behavior and perceived mental overload at different times of the day. 
+The dataset includes daily records of app switches, notifications, and self-reported mental overload levels in the morning and at night. 
+
+Each row represents a day, and two rectangles are shown for each day: one for morning and one for night. The width of each rectangle represents the number of app switches, 
+while the color intensity (light to dark red) represents the level of mental overload. Darker shades indicate higher overload. 
+
+This design allows for easy comparison across days and between times of the day, helping to identify patterns in how digital behavior affects mental state. Although notification data was collected,
+it is not visually emphasized in the current design, but it provides additional context for understanding potential sources of cognitive interruption.
+</p>
+
+<h2>Observations</h2>
+<ul>
+    <li>There is a noticeable trend where days with higher app switching tend to show darker red shades, indicating higher mental overload.</li>
+    <li>Mental overload is often higher at night compared to the morning, suggesting that prolonged device use throughout the day may accumulate stress.</li>
+    <li>Days with lower app switching (e.g., Feb 13-15) show lighter shades, indicating lower mental overload.</li>
+    <li>High app switching days (e.g., Feb 23-24) consistently show high overload in both morning and night.</li>
+</ul>
+
+<h2>Conclusion</h2>
+<p>
+The visualization supports the hypothesis that increased app switching is associated with higher mental overload. While the relationship is not perfectly linear, 
+there is a clear pattern where higher digital activity corresponds to higher perceived stress levels. Additionally, the increase in overload from morning to night 
+suggests that cumulative usage throughout the day may contribute to mental fatigue. This highlights the potential impact of frequent app switching on cognitive well-being.
+</p>
+
+</body>
+
+</html>

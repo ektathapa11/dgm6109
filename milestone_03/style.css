@@ -1,0 +1,181 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f5f5f5;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0a0f2c;
+  color: white;
+  padding: 15px 40px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: orange;
+}
+
+.login {
+  cursor: pointer;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+}
+
+.hero img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.hero-text {
+  position: absolute;
+  bottom: 40px;
+  left: 50px;
+  color: white;
+}
+
+.hero button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: orange;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.hero button:hover {
+  background: darkorange;
+}
+
+/* COLLECTIONS */
+.collections {
+  display: flex;
+  padding: 40px;
+  gap: 20px;
+}
+
+.left {
+  flex: 1;
+  position: relative;
+}
+
+.left img {
+  width: 100%;
+}
+
+.left h3 {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.right {
+  flex: 1;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.box img {
+  width: 100%;
+}
+
+.highlight {
+  background: orange;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* PRODUCTS */
+.products {
+  text-align: center;
+  padding: 40px;
+}
+
+.product-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.card {
+  background: white;
+  padding: 15px;
+  width: 200px;
+}
+
+.card img {
+  width: 100%;
+}
+
+.card button {
+  margin-top: 10px;
+  padding: 8px;
+  background: orange;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background: darkorange;
+}
+
+/* FOOTER */
+footer {
+  background: #0a0f2c;
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .collections {
+    flex-direction: column;
+  }
+
+  .product-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links {
+    display: none;
+  }
+}
