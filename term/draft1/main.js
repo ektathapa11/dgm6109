@@ -16,10 +16,10 @@ d3.json("data.json").then(function (data) {
     buildVisualization(data);
 });
 
-svg.append("rect")
+svg.append("rect") /* Border */
     .attr("x", 50)
     .attr("y", 50)
-    .attr("width", svgWidth - 110)
+    .attr("width", svgWidth - 170)
     .attr("height", svgHeight - 100)
     .attr("fill", "none")
     .attr("stroke", "#333")
