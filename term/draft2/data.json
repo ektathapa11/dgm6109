@@ -1,0 +1,19 @@
+[
+  { "day": "Feb 8", "appSwitches": 110, "notifications": 89, "overload2pm": 3, "overload10pm": 4 },
+  { "day": "Feb 9", "appSwitches": 142, "notifications": 118, "overload2pm": 4, "overload10pm": 5 },
+  { "day": "Feb 10", "appSwitches": 156, "notifications": 132, "overload2pm": 4, "overload10pm": 5 },
+  { "day": "Feb 11", "appSwitches": 128, "notifications": 104, "overload2pm": 3, "overload10pm": 5 },
+  { "day": "Feb 12", "appSwitches": 135, "notifications": 115, "overload2pm": 4, "overload10pm": 4 },
+  { "day": "Feb 13", "appSwitches": 85, "notifications": 70, "overload2pm": 2, "overload10pm": 3 },
+  { "day": "Feb 14", "appSwitches": 60, "notifications": 45, "overload2pm": 1, "overload10pm": 2 },
+  { "day": "Feb 15", "appSwitches": 75, "notifications": 60, "overload2pm": 2, "overload10pm": 3 },
+  { "day": "Feb 16", "appSwitches": 95, "notifications": 85, "overload2pm": 3, "overload10pm": 4 },
+  { "day": "Feb 17", "appSwitches": 148, "notifications": 125, "overload2pm": 4, "overload10pm": 5 },
+  { "day": "Feb 18", "appSwitches": 90, "notifications": 80, "overload2pm": 3, "overload10pm": 4 },
+  { "day": "Feb 19", "appSwitches": 105, "notifications": 95, "overload2pm": 3, "overload10pm": 4 },
+  { "day": "Feb 20", "appSwitches": 120, "notifications": 105, "overload2pm": 4, "overload10pm": 4 },
+  { "day": "Feb 21", "appSwitches": 130, "notifications": 112, "overload2pm": 4, "overload10pm": 5 },
+  { "day": "Feb 22", "appSwitches": 145, "notifications": 120, "overload2pm": 4, "overload10pm": 5 },
+  { "day": "Feb 23", "appSwitches": 155, "notifications": 130, "overload2pm": 5, "overload10pm": 5 },
+  { "day": "Feb 24", "appSwitches": 165, "notifications": 145, "overload2pm": 5, "overload10pm": 5 }
+]
