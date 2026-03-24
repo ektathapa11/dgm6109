@@ -49,7 +49,7 @@ function buildVisualization(data) {
 
 /*  ORGANIZE DATA  */
 
-// Currently returns data as-is (no transformation needed)
+// Currently returns data
 function organizeData(data) {
     return data;
 }
