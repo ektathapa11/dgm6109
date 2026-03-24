@@ -129,3 +129,106 @@
   margin-left: 10px;
   font-family: 'Montserrat', sans-serif;
 }
+
+/* RESPONSIVE (HELP PAGE)*/
+
+/* TABLET */
+@media (max-width: 1024px) {
+
+  .navbar {
+    padding: 10px 30px;
+  }
+
+  .nav-links {
+    gap: 30px;
+    font-size: 16px;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .faq {
+    padding: 40px 40px;
+  }
+
+  .faq ul {
+    margin-left: 20px;
+  }
+
+  .faq li {
+    font-size: 20px;
+  }
+
+  .support {
+    padding: 30px 40px;
+  }
+}
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  /* NAV */
+  .navbar {
+    padding: 10px 20px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  /* HERO */
+  .hero h1 {
+    font-size: 26px;
+    line-height: 32px;
+  }
+
+  /* SEARCH */
+  .search-bar {
+    padding: 10px 20px;
+  }
+
+  /* FAQ */
+  .faq {
+    padding: 30px 20px;
+  }
+
+  .faq h2 {
+    font-size: 28px;
+  }
+
+  .faq ul {
+    margin-left: 15px;
+  }
+
+  .faq li {
+    font-size: 18px;
+  }
+
+  .faq p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* SUPPORT */
+  .support {
+    padding: 30px 20px;
+    text-align: center;
+  }
+
+  .support h2 {
+    font-size: 28px;
+  }
+
+  .contact-btn {
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .support p {
+    margin-left: 0;
+    font-size: 14px;
+  }
+}

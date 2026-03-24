@@ -162,3 +162,112 @@
   cursor: pointer;
   font-size: 18px;
 }
+
+/* RESPONSIVE (SHOP PAGE) */
+
+/* TABLET */
+@media (max-width: 1024px) {
+
+  .navbar {
+    padding: 10px 30px;
+  }
+
+  .nav-links {
+    gap: 30px;
+    font-size: 16px;
+  }
+
+  .container {
+    flex-direction: row;
+  }
+
+  .sidebar {
+    width: 200px;
+    padding: 20px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card img {
+    width: 100%;
+  }
+
+  .card button {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  /* NAV */
+  .navbar {
+    padding: 10px 20px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  /* LAYOUT STACK */
+  .container {
+    flex-direction: column;
+  }
+
+  /* SIDEBAR → TOP */
+  .sidebar {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .sidebar ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .filter-btn {
+    width: 100%;
+  }
+
+  /* PRODUCTS */
+  .products {
+    padding: 20px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .card p {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .card span {
+    text-align: center;
+  }
+
+  .card button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  /* SEARCH BAR */
+  .search-bar {
+    padding: 10px 20px;
+  }
+}

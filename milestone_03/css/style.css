@@ -54,6 +54,8 @@ body {
 }
 
 .login {
+  text-decoration: none;
+  color: white;
   cursor: pointer;
 }
 
@@ -93,6 +95,8 @@ body {
   cursor: pointer;
   font-family: 'Montserrat', sans-serif;
   font-size: 30px;
+  text-decoration: none;  
+  display: inline-block;
 }
 
 .collections {
@@ -277,22 +281,149 @@ body {
 }
 
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
+/* RESPONSIVE (HOME PAGE) */
+/* TABLET */
+@media (max-width: 1024px) {
+
+  .navbar {
+    padding: 10px 30px;
+  }
+
   .nav-links {
-    display: none;
+    gap: 30px;
+    font-size: 16px;
+  }
+
+  .hero__content {
+    font-size: 24px;
+    line-height: 32px;
+    top: 75%;
+  }
+
+  .btn {
+    font-size: 20px;
+    padding: 12px 20px;
   }
 
   .collections {
     grid-template-columns: 1fr;
   }
 
+  .right {
+    gap: 20px;
+  }
+
+  .bottom {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .products {
+    padding: 40px 30px;
+  }
+
   .products__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .product img {
+    width: 100%;
+  }
+
+  .product button {
+    width: 100%;
+  }
+}
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  /* NAV */
+  .navbar {
+    padding: 10px 20px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .login {
+    font-size: 14px;
+  }
+
+  /* HERO */
+  .hero {
+    height: 60vh;
+  }
+
+  .hero__content {
+    font-size: 18px;
+    line-height: 24px;
+    top: 70%;
+    width: 90%;
+  }
+
+  .btn {
+    font-size: 16px;
+    padding: 10px 16px;
+  }
+
+  /* COLLECTIONS */
+  .collections {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .left img,
+  .men img,
+  .kids img,
+  .gift {
+    height: auto;
+  }
+
+  .left h2,
+  .men h2,
+  .kids h2,
+  .gift h2 {
+    font-size: 24px;
+  }
+
+  .bottom {
     grid-template-columns: 1fr;
   }
 
+  /* PRODUCTS */
+  .products {
+    padding: 30px 20px;
+  }
+
+  .products h2 {
+    font-size: 32px;
+  }
+
+  .products__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .product img {
+    height: auto;
+  }
+
+  .product h3 {
+    font-size: 26px;
+  }
+
+  .product button {
+    width: 100%;
+    font-size: 18px;
+    padding: 10px;
+  }
+
+  /* FOOTER */
   .footer__content {
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
   }
 }
