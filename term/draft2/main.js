@@ -200,7 +200,7 @@ svg.append("rect")
     .attr("y", legendY)
     .attr("width", 110)
     .attr("height", 100)
-    .attr("fill", "#f7f2f2")
+    .attr("fill", "none")
     .attr("stroke", "#4c4b4b")
     .attr("stroke-width", 0.5);
     
