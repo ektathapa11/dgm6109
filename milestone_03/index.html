@@ -4,97 +4,126 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nepali Fashion</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts-->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
 <!-- HEADER -->
-<header>
+<header class="header">
   <nav class="navbar">
-    <div class="logo">N</div>
+      <div class="logo">
+    <img src="images/logo.png" alt="Logo">
+  </div>
+
     <ul class="nav-links">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Shop</a></li>
-      <li><a href="#">Product</a></li>
-      <li><a href="#">Help</a></li>
-      <li><a href="#">About us</a></li>
-    </ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="shop.html">Shop</a></li>
+  <li><a href="product.html">Product</a></li>
+  <li><a href="help.html">Help</a></li>
+  <li><a href="about.html">About us</a></li>
+</ul>
+
     <div class="login">Login</div>
   </nav>
 </header>
 
-<!-- HERO -->
+<!-- MAIN -->
+<main class="container">
+
+  <!-- HERO -->
 <section class="hero">
-  <img src="images/3.jpg" alt="Hero Image">
-  <div class="hero-text">
-    <p>Discover handcrafted clothing inspired by Nepali rich culture and traditions</p>
-    <button>NEW ARRIVALS</button>
+  <img src="images/3.jpg" alt="Nepali fashion" class="hero__img">
+
+  <div class="hero__content">
+    <p>Discover handcrafted clothing inspired by Nepali rich culture and traditions.</p>
+    <button class="btn">NEW ARRIVALS</button>
   </div>
 </section>
 
-<!-- COLLECTIONS -->
 <section class="collections">
+
+  <!-- LEFT -->
   <div class="left">
-    <img src="images/women.jpg" alt="">
-    <h3>Women's Collection</h3>
+    <img src="images/4.jpg" alt="">
+    <h2>Women's Collection</h2>
   </div>
 
+  <!-- RIGHT -->
   <div class="right">
-    <div class="grid">
-      <div class="box">
-        <img src="images/men.jpg" alt="">
-        <p>Men’s Collection</p>
+
+    <!-- MEN -->
+    <div class="men">
+      <img src="images/6.jpg" alt="">
+      <h2>Men’s Collection</h2>
+    </div>
+
+    <!-- BOTTOM -->
+    <div class="bottom">
+
+      <!-- KIDS -->
+      <div class="kids">
+        <img src="images/7.jpg" alt="">
+        <h2>Kid’s Collection</h2>
       </div>
-      <div class="box">
-        <img src="images/kids.jpg" alt="">
-        <p>Kid’s Collection</p>
-      </div>
-      <div class="box highlight">
+
+      <!-- GIFT -->
+      <div class="gift">
         <p>Give the gift of culture and style.</p>
-        <h4>Gift Cards</h4>
+        <h2>Gift Cards</h2>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- PRODUCTS -->
-<section class="products">
-  <h2>Our Trendy Products</h2>
-
-  <div class="product-grid">
-
-    <div class="card">
-      <img src="images/top.jpg" alt="">
-      <h3>Tops</h3>
-      <p>35$</p>
-      <button>Add To Cart</button>
-    </div>
-
-    <div class="card">
-      <img src="images/skirt.jpg" alt="">
-      <h3>Skirts</h3>
-      <p>35$</p>
-      <button>Add To Cart</button>
-    </div>
-
-    <div class="card">
-      <img src="images/necklace.jpg" alt="">
-      <h3>Necklace</h3>
-      <p>10$</p>
-      <button>Add To Cart</button>
     </div>
 
   </div>
+
 </section>
+
+  <!-- PRODUCTS -->
+  <section class="products">
+    <h2>Our Trendy Products</h2>
+
+    <div class="products__grid">
+
+      <article class="product">
+        <img src="images/5.jpg" alt="Traditional Nepali top">
+        <h3>Tops</h3>
+        <p>$35</p>
+        <button class="btn">Add To Cart</button>
+      </article>
+
+      <article class="product">
+        <img src="images/8.png" alt="Traditional Nepali skirt">
+        <h3>Skirts</h3>
+        <p>$35</p>
+        <button class="btn">Add To Cart</button>
+      </article>
+
+      <article class="product">
+        <img src="images/9.jpg" alt="Nepali cultural necklace">
+        <h3>Necklace</h3>
+        <p>$10</p>
+        <button class="btn">Add To Cart</button>
+      </article>
+
+    </div>
+  </section>
+
+</main>
 
 <!-- FOOTER -->
-<footer>
-  <h2>Footer</h2>
-  <div class="footer-content">
+<footer class="footer">
+  <h2>FOOTER</h2>
+  <div class="footer__content">
     <div>Contact Info</div>
     <div>Social Links</div>
-    <div class="logo">N</div>
+    <div class="logo2">
+    <img src="images/logo.png" alt="Logo">
+  </div>
+
   </div>
 </footer>
 
