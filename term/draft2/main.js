@@ -26,7 +26,7 @@ svg.append("rect")
 
 /* GLOBAL VARIABLES  */
 
-let xScale;
+let xScale; // controls where morning/night placed on the screen
 
 
 /*  LOAD DATA  */
@@ -59,7 +59,7 @@ function organizeData(data) {
 
 // Creates xScale for positioning Morning and Night columns
 function buildScales(data) {
-    xScale = d3.scalePoint()
+    xScale = d3.scalePoint()  //mapping categorial values to fixed position
         .domain(["Morning", "Night"])
         .range([250, 450]);
 }
@@ -122,7 +122,7 @@ function drawVisualization(data) {
     for (let i = 0; i < data.length; i++) {
 
         let value = data[i];
-        let y = startY + i * rowHeight;
+        let y = startY + i * rowHeight; //decides the vertical position
 
         /*  DATE LABEL  */
 
@@ -141,7 +141,9 @@ function drawVisualization(data) {
             .attr("width", getWidth(value.appSwitches))
             .attr("height", 10)
             .attr("fill", getColor(value.overload2pm))
+            .attr("stroke", "#000")
             .attr("stroke-width", getStroke(value.notifications));
+            
 
 
         /*  NIGHT RECTANGLE  */
@@ -152,9 +154,10 @@ function drawVisualization(data) {
             .attr("width", getWidth(value.appSwitches))
             .attr("height", 10)
             .attr("fill", getColor(value.overload10pm))
+            .attr("stroke", "#000")
             .attr("stroke-width", getStroke(value.notifications));
-    }
-
+            
+ }
 
     /*  COLUMN LABELS  */
 
